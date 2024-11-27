@@ -61,7 +61,7 @@ function CourseLanding() {
 
 
         {/* Teal-Themed Dropdown Menu (Select) */}
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <Select
             value={courseLandingFormData?.category}
             onValueChange={(value) =>
@@ -73,7 +73,7 @@ function CourseLanding() {
           >
             
           </Select>
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );
