@@ -167,7 +167,7 @@ export default InstructorDashboard;
         label: "Total Revenue",
         value: calculateTotalStudentsAndProfit().totalProfit,
       },
-      {
+      /* {
         icon: Star,
         label: "Reviews",
         value: calculateTotalStudentsAndProfit().totalProfit,
@@ -176,7 +176,7 @@ export default InstructorDashboard;
         icon: Book,
         label: "Total Courses",
         value: calculateTotalStudentsAndProfit().totalProfit,
-      },
+      }, */
     ];
 
     return (
