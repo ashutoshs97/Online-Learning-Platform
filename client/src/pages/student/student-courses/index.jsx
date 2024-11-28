@@ -25,38 +25,45 @@ function StudentCoursesPage() {
   }, []);
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold mb-8">My Courses</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+    <div className="p-6 bg-teal-50 min-h-screen">
+      <h1 className="text-3xl font-bold text-teal-700 mb-8">My Courses</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {studentBoughtCoursesList && studentBoughtCoursesList.length > 0 ? (
           studentBoughtCoursesList.map((course) => (
-            <Card key={course.id} className="flex flex-col">
+            <Card
+              key={course.id}
+              className="flex flex-col bg-white border border-teal-300 shadow-md rounded-lg"
+            >
               <CardContent className="p-4 flex-grow">
                 <img
                   src={course?.courseImage}
                   alt={course?.title}
                   className="h-52 w-full object-cover rounded-md mb-4"
                 />
-                <h3 className="font-bold mb-1">{course?.title}</h3>
-                <p className="text-sm text-gray-700 mb-2">
+                <h3 className="font-bold text-teal-800 mb-2">
+                  {course?.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">
                   {course?.instructorName}
                 </p>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-teal-100 p-4 rounded-b-lg">
                 <Button
                   onClick={() =>
                     navigate(`/course-progress/${course?.courseId}`)
                   }
-                  className="flex-1"
+                  className="flex-1 bg-teal-600 text-white hover:bg-teal-700"
                 >
-                  <Watch className="mr-2 h-4 w-4" />
+                  <Watch className="mr-2 h-4 w-4 text-white" />
                   Start Watching
                 </Button>
               </CardFooter>
             </Card>
           ))
         ) : (
-          <h1 className="text-3xl font-bold">No Courses found</h1>
+          <h1 className="text-xl font-bold text-teal-600">
+            No Courses Found
+          </h1>
         )}
       </div>
     </div>
